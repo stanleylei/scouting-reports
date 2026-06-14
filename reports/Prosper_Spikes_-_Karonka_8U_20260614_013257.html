@@ -314,6 +314,12 @@
       color: #075985;
     }
 
+    .badge-not-rated {
+      background: var(--slate-100);
+      color: var(--slate-500);
+      border: 1px solid var(--slate-200);
+    }
+
     /* === INSIGHT CARDS (LLM prose) === */
     .card-grid {
       display: grid;
@@ -457,37 +463,47 @@
       body {
         padding: 0;
       }
+
       .report-container {
         border-radius: 0;
         border: none;
         box-shadow: none;
       }
+
       .header {
         padding: 16px;
       }
+
       .header h1 {
         font-size: 20px;
       }
+
       .header-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
       }
+
       .header-meta {
         text-align: left;
       }
+
       .content {
         padding: 16px 12px;
       }
+
       .section-title {
         font-size: 16px;
       }
+
       thead th {
         padding: 8px 10px;
       }
+
       tbody td {
         padding: 6px 10px;
       }
+
       tfoot td {
         padding: 8px 10px;
       }
@@ -534,7 +550,7 @@
           
           <p class="value">Games Scouted: 33</p>
           <p class="value" style="color:var(--slate-400);">Total Plate Appearances: 1055</p>
-          <p style="color:var(--slate-400); font-size:10px; margin-top:4px;">2026-06-14 01:21</p>
+          <p style="color:var(--slate-400); font-size:10px; margin-top:4px;">2026-06-14 01:32</p>
         </div>
       </div>
     </div>
@@ -807,7 +823,7 @@
                 <td class="mono font-bold text-red">0.692</td>
                 <td class="mono font-bold text-red">1.307</td>
                 <td class="mono ">33.3%</td>
-                <td><span class="badge badge-med">MED</span></td>
+                <td><span class="badge badge-not-rate">Not Rate</span></td>
               </tr>
               
             </tbody>
@@ -1417,15 +1433,19 @@
             <ul>
               
               <li><span class="bullet">•</span>
-                <div><strong>Point 1:</strong> The top of the lineup (Freddie H #5, Turner L #2, Brady K #3) shows a strong pull tendency to the left side. Freddie sprays 50% of his contact to left/left-center, while Turner pulls an extreme 46.8% to left field. Shift your infield and outfield heavily toward the left side for batters 1-3, with the third baseman playing on the grass and the left fielder shading toward the line.</div>
+                <div><strong>Point 1:</strong> The top of the lineup is dangerous to the opposite field. Freddie H (#5) and Hendrix H (#1) both show a combined 50%+ of their contact to left-center and left field. Shift your middle infielders toward the left side and your second baseman deep into the gap when they are up. Do not over-shift on Freddie—he sprays to right field 22.4% of the time.</div>
               </li>
               
               <li><span class="bullet">•</span>
-                <div><strong>Point 2:</strong> Batters 5-8 (Krew M #00, Tanner S #7, Ty D #12, Drake W #17) have high OutField Hit percentages (40-55%) and low GB% for most of them, meaning they drive the ball into the outfield regularly. Play your outfield at normal depth for these hitters, but note that Drake W has a 53.8% GB rate—your infield should be ready to charge for him, while your outfield plays deep for Krew and Tanner.</div>
+                <div><strong>Point 2:</strong> Turner L (#2) is a heavy pull hitter, putting 46.8% of his contact to left field. Overload your left side defense with the third baseman playing on the line and the shortstop shaded toward second base. Expect hard groundballs (43.6% GB) to the left side.</div>
               </li>
               
               <li><span class="bullet">•</span>
-                <div><strong>Point 3:</strong> The bottom of the lineup (Whitton F #8, Jack W #23, Beckett B #11) shows a balanced spray chart with no extreme pull bias, but Beckett has a 50% FB rate and only 29.7% OutField Hit—meaning he hits pop-ups to the shallow outfield. Position your outfielders to play slightly shallower for Beckett, and keep your middle infielders ready for Whitton and Jack, who hit to all fields with moderate groundball rates.</div>
+                <div><strong>Point 3:</strong> The bottom third of the order (Drake W #17, Whitton F #8, Beckett B #11) shows high fly ball rates (26.2%, 52.6%, 50.0% FB) but lower OutFieldHit percentages. Play your outfielders at normal depth or slightly shallow—these hitters are not driving the ball to the fence, but they are putting it in the air for routine catches.</div>
+              </li>
+              
+              <li><span class="bullet">•</span>
+                <div><strong>Point 4:</strong> Krew M (#00) and Tanner S (#7) are the biggest fly ball threats in the middle of the order, with 53.5% and 49.4% FB rates respectively. Both also have high OutFieldHit percentages (54.7% and 40.2%). Position your outfielders deep and toward the gaps for these two, especially Krew who hits to all fields.</div>
               </li>
               
             </ul>
@@ -1439,15 +1459,15 @@
               <ul>
                 
                 <li><span class="bullet">→</span>
-                  <div><strong>Point 1:</strong> With zero stolen base attempts recorded in 33 games, this team does not prioritize aggressive baserunning. Your catchers and pitchers can focus on holding runners for the extra base rather than quick throws to second. Do not overcommit to slide-step deliveries or pickoff moves.</div>
+                  <div><strong>Point 1:</strong> This team has virtually no stolen base threat. No significant steal attempts were recorded in 33 games. Do not waste energy on pickoff moves or slide-step deliveries. Focus all attention on limiting extra bases on hits.</div>
                 </li>
                 
                 <li><span class="bullet">→</span>
-                  <div><strong>Point 2:</strong> Despite the lack of steals, this team has massive extra-base hit potential. Five players (Freddie H, Brady K, Krew M, Tanner S, Jack W) have SLG over .800, meaning they will frequently turn singles into doubles and doubles into triples. Outfielders must hit the cutoff man immediately and anticipate throws to second and third on any ball hit into the gap.</div>
+                  <div><strong>Point 2:</strong> Despite low steal volume, this lineup is a nightmare on contact. The team slugging percentage is .750, with multiple players over .800 (Krew M #00 at .948, Freddie H #5 at .881, Brady K #4 at .846). Your outfielders must hit the cutoff man immediately and your infielders must be ready to receive throws on every single base hit.</div>
                 </li>
                 
                 <li><span class="bullet">→</span>
-                  <div><strong>Point 3:</strong> The team’s Contact% is 99.0% with only 10 strikeouts total—they put the ball in play almost every at-bat. This means they will force your defense to make plays, so your baserunners should be aggressive on any bobbled ball or errant throw, not on pure speed. Emphasize reading the ball off the bat and advancing on contact.</div>
+                  <div><strong>Point 3:</strong> Krew M (#00) and Jack W (#23) have combined for 8 home runs and 80 RBI. When they put the ball in the air, runners are scoring. Your relay system from the outfield must be drilled and crisp—do not allow extra bases on balls that get to the wall.</div>
                 </li>
                 
               </ul>
@@ -1460,15 +1480,15 @@
               <ul>
                 
                 <li><span class="bullet">✓</span>
-                  <div><strong>Point 1:</strong> Freddie H #5 has 73 putouts at shortstop—this is a defensive vacuum. He is likely covering a massive range and catching everything in the air or on the ground up the middle. Your batters should avoid hitting grounders or line drives to the left-center gap. Instead, focus on pulling the ball to the right side or hitting deep to center field to bypass him.</div>
+                  <div><strong>Point 1:</strong> Freddie H (#5) is a vacuum at shortstop with 73 putouts—the highest on the team by a wide margin. He is catching everything in the air and on the ground. Your hitters should avoid hitting routine grounders or lazy fly balls to the left side. Attack the right side of the infield, where Ty D (#12) has only 47 putouts at second base, or hit hard grounders up the middle.</div>
                 </li>
                 
                 <li><span class="bullet">✓</span>
-                  <div><strong>Point 2:</strong> Ty D #12 (47 putouts at 2B) and Hendrix H #1 (42 putouts at 3B) form a strong double-play combination on the left side of the infield. With Brady K #40 also logging 40 putouts as a pitcher, the entire left infield is a no-go zone for ground balls. Teach your hitters to attack the right side of the infield and the opposite field to avoid these three fielders.</div>
+                  <div><strong>Point 2:</strong> The outfield corners are weak spots. Beckett B (#11) in center field has 29 putouts, but left fielder Jack W (#23) has only 18 and right fielder Krew M (#00) has just 14. Target the gaps and the corners with line drives and fly balls. Your hitters should be aggressive on pitches they can drive to the outfield grass.</div>
                 </li>
                 
                 <li><span class="bullet">✓</span>
-                  <div><strong>Point 3:</strong> Beckett B #11 has 29 putouts in center field and only 1 player in the outfield (Jack W with 18) has more than 20 putouts. This indicates Beckett is the primary vacuum in the outfield, catching fly balls and line drives to center. Your batters should aim to hit to the corners—specifically left field (only 18 putouts from Jack W) and right field (no outfielder with high putouts listed)—to avoid Beckett’s range.</div>
+                  <div><strong>Point 3:</strong> First base is not a vacuum. Krew M (#00) has only 14 putouts at first base, which is low for the position. This suggests the infield is not consistently throwing him the ball. If your batters can put the ball in play on the infield, there is a real chance for infield singles and errors on throws to first.</div>
                 </li>
                 
               </ul>
@@ -1518,7 +1538,9 @@
                 <td>3</td>
                 <td>3</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1534,7 +1556,9 @@
                 <td>3</td>
                 <td>3</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1550,7 +1574,27 @@
                 <td>3</td>
                 <td>3</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Freddie H</td>
+                <td>118</td>
+                <td>69</td>
+                <td>48</td>
+                <td class="text-red">1</td>
+                <td class="mono">0.992</td>
+                <td>3</td>
+                <td>3</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1566,7 +1610,9 @@
                 <td>0</td>
                 <td>0</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1582,7 +1628,9 @@
                 <td>0</td>
                 <td>0</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1598,231 +1646,243 @@
                 <td>0</td>
                 <td>0</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
               </tr>
               
               <tr>
-                <td>Ty D</td>
-                <td>77</td>
-                <td>49</td>
-                <td>28</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Ty D</td>
-                <td>77</td>
-                <td>49</td>
-                <td>28</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Ty D</td>
-                <td>77</td>
-                <td>49</td>
-                <td>28</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Hendrix H</td>
-                <td>73</td>
-                <td>43</td>
-                <td>30</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Hendrix H</td>
-                <td>73</td>
-                <td>43</td>
-                <td>30</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Hendrix H</td>
-                <td>73</td>
-                <td>43</td>
-                <td>30</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Whitton F</td>
-                <td>43</td>
-                <td>29</td>
-                <td>14</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Whitton F</td>
-                <td>43</td>
-                <td>29</td>
-                <td>14</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Whitton F</td>
-                <td>43</td>
-                <td>29</td>
-                <td>14</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Beckett B</td>
-                <td>41</td>
-                <td>38</td>
-                <td>3</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Beckett B</td>
-                <td>41</td>
-                <td>38</td>
-                <td>3</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Beckett B</td>
-                <td>41</td>
-                <td>38</td>
-                <td>3</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Tanner S</td>
-                <td>28</td>
-                <td>21</td>
-                <td>6</td>
+                <td>Brady K</td>
+                <td>86</td>
+                <td>52</td>
+                <td>33</td>
                 <td class="text-red">1</td>
-                <td class="mono">0.964</td>
+                <td class="mono">0.988</td>
                 <td>0</td>
                 <td>0</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
               </tr>
               
               <tr>
-                <td>Jack W</td>
+                <td>Ty D</td>
+                <td>77</td>
+                <td>49</td>
                 <td>28</td>
-                <td>22</td>
-                <td>6</td>
                 <td class="">0</td>
                 <td class="mono">1.000</td>
                 <td>0</td>
                 <td>0</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Ty D</td>
+                <td>77</td>
+                <td>49</td>
+                <td>28</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Ty D</td>
+                <td>77</td>
+                <td>49</td>
+                <td>28</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Ty D</td>
+                <td>77</td>
+                <td>49</td>
+                <td>28</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Hendrix H</td>
+                <td>73</td>
+                <td>43</td>
+                <td>30</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Hendrix H</td>
+                <td>73</td>
+                <td>43</td>
+                <td>30</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Hendrix H</td>
+                <td>73</td>
+                <td>43</td>
+                <td>30</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Hendrix H</td>
+                <td>73</td>
+                <td>43</td>
+                <td>30</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Whitton F</td>
+                <td>43</td>
+                <td>29</td>
+                <td>14</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Whitton F</td>
+                <td>43</td>
+                <td>29</td>
+                <td>14</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Whitton F</td>
+                <td>43</td>
+                <td>29</td>
+                <td>14</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Whitton F</td>
+                <td>43</td>
+                <td>29</td>
+                <td>14</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1839,7 +1899,7 @@
   </div>
 
   <div class="footer">
-    Confidential Scouting Data • TechVue Solutions, LLC • Auto-Generated 2026-06-14 01:21
+    Confidential Scouting Data • TechVue Solutions, LLC • Auto-Generated 2026-06-14 01:32
   </div>
 
   </div>
