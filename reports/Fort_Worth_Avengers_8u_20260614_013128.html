@@ -314,6 +314,13 @@
       color: #075985;
     }
 
+    .badge-not-rate,
+    .badge-not-rated {
+      background: var(--slate-100);
+      color: var(--slate-500);
+      border: 1px solid var(--slate-200);
+    }
+
     /* === INSIGHT CARDS (LLM prose) === */
     .card-grid {
       display: grid;
@@ -457,37 +464,47 @@
       body {
         padding: 0;
       }
+
       .report-container {
         border-radius: 0;
         border: none;
         box-shadow: none;
       }
+
       .header {
         padding: 16px;
       }
+
       .header h1 {
         font-size: 20px;
       }
+
       .header-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
       }
+
       .header-meta {
         text-align: left;
       }
+
       .content {
         padding: 16px 12px;
       }
+
       .section-title {
         font-size: 16px;
       }
+
       thead th {
         padding: 8px 10px;
       }
+
       tbody td {
         padding: 6px 10px;
       }
+
       tfoot td {
         padding: 8px 10px;
       }
@@ -534,7 +551,7 @@
           
           <p class="value">Games Scouted: 31</p>
           <p class="value" style="color:var(--slate-400);">Total Plate Appearances: 826</p>
-          <p style="color:var(--slate-400); font-size:10px; margin-top:4px;">2026-06-14 01:19</p>
+          <p style="color:var(--slate-400); font-size:10px; margin-top:4px;">2026-06-14 01:31</p>
         </div>
       </div>
     </div>
@@ -770,8 +787,8 @@
                 <td><span class="badge badge-med">MED</span></td>
               </tr>
               
-              <tr class="row-extreme">
-                <td class="text-red" >11. Beckett Smith #28</td>
+              <tr class="">
+                <td >11. Beckett Smith #28</td>
                 <td>7</td>
                 <td>15</td>
                 <td>11</td>
@@ -786,8 +803,8 @@
                 <td class="mono font-bold text-green">0.733</td>
                 <td class="mono font-bold text-red">1.000</td>
                 <td class="mono font-bold text-red">1.733</td>
-                <td class="mono font-bold text-red">35.7%</td>
-                <td><span class="badge badge-extreme">EXTREME</span></td>
+                <td class="mono ">35.7%</td>
+                <td><span class="badge badge-not-rate">Not Rate</span></td>
               </tr>
               
               <tr class="">
@@ -807,11 +824,11 @@
                 <td class="mono ">0.571</td>
                 <td class="mono font-bold text-red">1.142</td>
                 <td class="mono ">14.3%</td>
-                <td><span class="badge badge-low">LOW</span></td>
+                <td><span class="badge badge-not-rate">Not Rate</span></td>
               </tr>
               
-              <tr class="row-extreme">
-                <td class="text-red" >13. Hollman #14</td>
+              <tr class="">
+                <td >13. Hollman #14</td>
                 <td>1</td>
                 <td>3</td>
                 <td>2</td>
@@ -826,8 +843,8 @@
                 <td class="mono font-bold text-green">0.667</td>
                 <td class="mono font-bold text-red">1.333</td>
                 <td class="mono font-bold text-red">2.000</td>
-                <td class="mono font-bold text-red">0.0%</td>
-                <td><span class="badge badge-extreme">EXTREME</span></td>
+                <td class="mono ">0.0%</td>
+                <td><span class="badge badge-not-rate">Not Rate</span></td>
               </tr>
               
             </tbody>
@@ -1394,19 +1411,15 @@
             <ul>
               
               <li><span class="bullet">•</span>
-                <div><strong>Point 1: Play a deeper outfield for power threats, particularly to left-center.</strong> Batters like <strong>Reid Sisk #17</strong> (40.5% OutFieldHit, 40.5% LD, 25.3% FB) and <strong>Mateo Rosales #11</strong> (48.8% OutFieldHit, 46.3% LD, 29.3% FB) consistently hit for extra bases and drive the ball into the outfield gaps. Be prepared for balls in the alleys.</div>
+                <div><strong>Point 1:</strong> The top of your lineup (batters 1-5) features extreme pull-side tendencies. Maddox Holleman #14 (38.6% L spray) and Mateo Rosales #11 (57.3% L spray) are dead-pull left-side hitters. Shift your infield and outfield hard to the left side for these two, and expect most contact to be on the ground (59.1% and 24.4% GB respectively).</div>
               </li>
               
               <li><span class="bullet">•</span>
-                <div><strong>Point 2: Shift the infield and outfield to the pull side for specific hitters.</strong> <strong>Mateo Rosales #11</strong> (57.3% L, 18.3% LC) and <strong>Gus Campbell #2</strong> (42.4% L, 19.7% LC) are strong pull hitters to the left side; position defenders accordingly when they are at the plate.</div>
+                <div><strong>Point 2:</strong> Batters 6-8 (Walker Hart #00, Reid Sisk #17, Grayson Walker #27) show a much more balanced spray chart with high OutField Hit percentages (33.3%, 40.5%, 24.4%). Do not over-shift against these three. Play your outfield at standard depth and keep your infield in a neutral alignment, as they can hit to all fields and will punish you for vacating gaps.</div>
               </li>
               
               <li><span class="bullet">•</span>
-                <div><strong>Point 3: Play a shallow outfield for the bottom of the order and groundball hitters.</strong> Batters like <strong>Zaiden Crawley #1</strong> (58.8% GB, 13.8% OutFieldHit), <strong>Cooper Mitchell #40</strong> (59.5% GB, 19.0% OutFieldHit), and <strong>Maddox Holleman #14</strong> (59.1% GB, 20.5% OutFieldHit) frequently hit ground balls that stay in the infield or just barely reach the outfield.</div>
-              </li>
-              
-              <li><span class="bullet">•</span>
-                <div><strong>Point 4: Be alert for central and all-fields hitting from the middle of the lineup.</strong> <strong>Walker Hart #00</strong> (35.9% C, 44.9% FB) and <strong>Kit Vergari #15</strong> (29.3% C) distribute the ball well across the field; avoid over-shifting and maintain balanced coverage.</div>
+                <div><strong>Point 3:</strong> The bottom of the order (batters 9-12) shows a heavy groundball and low OutField Hit trend for most, but Gus Campbell #2 (48.5% FB) and Beckett Smith #28 (50.0% FB) have high fly-ball rates. Play your outfield shallow for Campbell and Smith, as they are likely to pop up or hit soft liners. For Leon Lei #24 (50.9% GB) and the rest, expect grounders and bring your infield in.</div>
               </li>
               
             </ul>
@@ -1420,15 +1433,15 @@
               <ul>
                 
                 <li><span class="bullet">→</span>
-                  <div><strong>Point 1: Expect aggressive baserunning on contact due to high extra-base hit potential.</strong> This team boasts a collective <strong>SLG of 0.970</strong> and multiple power hitters. Players like <strong>Reid Sisk #17</strong> (9 HR, 1.475 SLG) and <strong>Walker Hart #00</strong> (6 HR, 1.321 SLG) will be looking to take extra bases on any ball put in play.</div>
+                  <div><strong>Point 1:</strong> This team has elite contact rates (98.4% team contact) and zero strikeout issues for the top 8 hitters. They will put the ball in play almost every at-bat. Your outfielders must be ready to field and throw quickly on every ball in the air, as these hitters are not giving you free outs via strikeouts.</div>
                 </li>
                 
                 <li><span class="bullet">→</span>
-                  <div><strong>Point 2: Focus on limiting extra bases for their top power threats.</strong> With players like <strong>Reid Sisk #17</strong> (72 RBI), <strong>Walker Hart #00</strong> (47 RBI), and <strong>Grayson Walker #27</strong> (40 RBI) frequently driving in runs, our cutoff and relay throws must be crisp to prevent runners from advancing further than necessary.</div>
+                  <div><strong>Point 2:</strong> With 540 hits in 824 at-bats and a team SLG of 0.970, this is a high-power, high-average lineup. Expect a lot of extra-base hits, especially from Reid Sisk #17 (1.475 SLG, 9 HR) and Walker Hart #00 (1.321 SLG, 6 HR). Your outfielders should take aggressive cutoff angles and your infield must be prepared to relay throws home on any ball that reaches the gaps.</div>
                 </li>
                 
                 <li><span class="bullet">→</span>
-                  <div><strong>Point 3: Be aware of high contact and low strikeout rates across the lineup.</strong> The team has an exceptional <strong>98.4% contact rate</strong> and only 13 total strikeouts in 824 ABs. This means balls will consistently be put in play, requiring our defense to be ready to make plays on every pitch.</div>
+                  <div><strong>Point 3:</strong> No steal data is recorded, but given their high contact rates and low strikeouts, baserunning aggression will likely come on balls in play rather than straight steals. Be alert for runners tagging up on deep fly balls, especially from Mateo Rosales #11 (48.8% OutFieldHit) and Reid Sisk #17 (40.5% OutFieldHit).</div>
                 </li>
                 
               </ul>
@@ -1441,19 +1454,15 @@
               <ul>
                 
                 <li><span class="bullet">✓</span>
-                  <div><strong>Point 1: Avoid hitting to the middle infield and third base where they have strong defenders.</strong> <strong>Reid Sisk #17</strong> (38 putouts at SS, 11 at 3B), <strong>Maddox Holleman #14</strong> (22 putouts at 2B, 13 at SS), and <strong>Walker Hart #00</strong> (34 putouts at 3B) are active and effective at their positions.</div>
+                  <div><strong>Point 1:</strong> Reid Sisk #17 is a defensive vacuum at shortstop with 38 putouts, and also has 11 putouts at third base. Avoid hitting ground balls to the left side of the infield. Sisk is catching everything in the air and on the ground. Pull your hitters to the right side if possible.</div>
                 </li>
                 
                 <li><span class="bullet">✓</span>
-                  <div><strong>Point 2: Exercise caution hitting hard ground balls to first base.</strong> <strong>Mateo Rosales #11</strong> has 28 putouts at 1B, suggesting a capable first baseman who consistently handles throws from the infield. Our infielders need to make strong, accurate throws.</div>
+                  <div><strong>Point 2:</strong> Walker Hart #00 (34 putouts at third base) and Mateo Rosales #11 (28 putouts at first base) form a strong left side of the infield. Hart is vacuuming up everything at third, and Rosales is handling throws at first. The middle infield (Maddox Holleman #14 with 22 putouts at 2B and 13 at SS) is also high-volume. Your best chance for a hit is to hit the ball hard up the middle or into the outfield gaps, not on the ground to the corners.</div>
                 </li>
                 
                 <li><span class="bullet">✓</span>
-                  <div><strong>Point 3: Be mindful of their strong center fielder, Kit Vergari #15.</strong> With 19 putouts at CF, <strong>Kit Vergari #15</strong> demonstrates good range and ability to track down fly balls, especially given the team's tendency to hit to all fields.</div>
-                </li>
-                
-                <li><span class="bullet">✓</span>
-                  <div><strong>Point 4: Their pitcher, Cooper Mitchell #40, is also defensively sound.</strong> With 21 putouts at pitcher, <strong>Cooper Mitchell #40</strong> is active on the mound and handles bunts and comebackers effectively.</div>
+                  <div><strong>Point 3:</strong> Outfield putout data is not listed, but note that Kit Vergari #15 (19 putouts at CF) and Zaiden Crawley #1 (18 putouts at short fielder) are active in the outfield grass. With their high contact rates, expect your batters to face a defense that is well-positioned and capable of turning balls in play into outs. Do not try to bunt or hit soft rollers; you will need line drives to beat this defense.</div>
                 </li>
                 
               </ul>
@@ -1503,7 +1512,9 @@
                 <td>4</td>
                 <td>4</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1519,7 +1530,9 @@
                 <td>4</td>
                 <td>4</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1535,7 +1548,27 @@
                 <td>4</td>
                 <td>4</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Walker Hart</td>
+                <td>46</td>
+                <td>43</td>
+                <td>2</td>
+                <td class="text-red">1</td>
+                <td class="mono">0.978</td>
+                <td>4</td>
+                <td>4</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1551,7 +1584,9 @@
                 <td>3</td>
                 <td>2</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1567,7 +1602,9 @@
                 <td>3</td>
                 <td>2</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1583,7 +1620,27 @@
                 <td>3</td>
                 <td>2</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Reid Sisk</td>
+                <td>45</td>
+                <td>45</td>
+                <td>0</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>3</td>
+                <td>2</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1599,7 +1656,9 @@
                 <td>1</td>
                 <td>1</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1615,7 +1674,9 @@
                 <td>1</td>
                 <td>1</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1631,7 +1692,27 @@
                 <td>1</td>
                 <td>1</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Mateo Rosales</td>
+                <td>38</td>
+                <td>36</td>
+                <td>1</td>
+                <td class="text-red">1</td>
+                <td class="mono">0.974</td>
+                <td>1</td>
+                <td>1</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1647,7 +1728,9 @@
                 <td>1</td>
                 <td>1</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1663,7 +1746,9 @@
                 <td>1</td>
                 <td>1</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1679,7 +1764,27 @@
                 <td>1</td>
                 <td>1</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Elite
+                  </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Cooper Mitchell</td>
+                <td>37</td>
+                <td>36</td>
+                <td>0</td>
+                <td class="text-red">1</td>
+                <td class="mono">0.973</td>
+                <td>1</td>
+                <td>1</td>
+                <td>
+                  <span
+                    class="badge text-green"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Elite
                   </span>
                 </td>
@@ -1695,7 +1800,9 @@
                 <td>3</td>
                 <td>3</td>
                 <td>
-                  <span class="badge badge-med" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge badge-med"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Solid
                   </span>
                 </td>
@@ -1711,7 +1818,9 @@
                 <td>3</td>
                 <td>3</td>
                 <td>
-                  <span class="badge badge-med" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge badge-med"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Solid
                   </span>
                 </td>
@@ -1727,88 +1836,28 @@
                 <td>3</td>
                 <td>3</td>
                 <td>
-                  <span class="badge badge-med" style="background: none; padding: 0; border: none; color: inherit;">
+                  <span
+                    class="badge badge-med"
+                    style="background: none; padding: 0; border: none; color: inherit;">
                     Solid
                   </span>
                 </td>
               </tr>
               
               <tr>
-                <td>Zaiden Crawley</td>
-                <td>21</td>
-                <td>21</td>
-                <td>0</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
+                <td>Maddox Holleman</td>
+                <td>35</td>
+                <td>30</td>
+                <td>3</td>
+                <td class="text-red">2</td>
+                <td class="mono">0.943</td>
+                <td>3</td>
+                <td>3</td>
                 <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Zaiden Crawley</td>
-                <td>21</td>
-                <td>21</td>
-                <td>0</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Zaiden Crawley</td>
-                <td>21</td>
-                <td>21</td>
-                <td>0</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Kit Vergari</td>
-                <td>20</td>
-                <td>20</td>
-                <td>0</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
-                  </span>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>Kit Vergari</td>
-                <td>20</td>
-                <td>20</td>
-                <td>0</td>
-                <td class="">0</td>
-                <td class="mono">1.000</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                  <span class="badge text-green" style="background: none; padding: 0; border: none; color: inherit;">
-                    Elite
+                  <span
+                    class="badge badge-med"
+                    style="background: none; padding: 0; border: none; color: inherit;">
+                    Solid
                   </span>
                 </td>
               </tr>
@@ -1824,7 +1873,7 @@
   </div>
 
   <div class="footer">
-    Confidential Scouting Data • TechVue Solutions, LLC • Auto-Generated 2026-06-14 01:19
+    Confidential Scouting Data • TechVue Solutions, LLC • Auto-Generated 2026-06-14 01:31
   </div>
 
   </div>
