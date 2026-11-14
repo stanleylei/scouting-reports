@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scouting Report: Texas Sandlot - Green 9U</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    :root {
+      --bg: #f3f4f6;
+      --white: #ffffff;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --amber-400: #fbbf24;
+      --amber-500: #f59e0b;
+      --red-50: #fef2f2;
+      --red-100: #fee2e2;
+      --red-600: #dc2626;
+      --red-700: #b91c1c;
+      --red-800: #991b1b;
+      --red-900: #7f1d1d;
+      --blue-50: #eff6ff;
+      --blue-100: #dbeafe;
+      --blue-600: #2563eb;
+      --blue-800: #1e40af;
+      --blue-900: #1e3a5f;
+      --green-600: #16a34a;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--slate-800);
+      line-height: 1.5;
+      padding: 16px;
+      font-size: 13px;
+    }
+
+    .report-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      border: 1px solid var(--slate-200);
+    }
+
+    /* === HEADER === */
+    .header {
+      background: linear-gradient(135deg, var(--slate-900), var(--slate-800));
+      color: white;
+      padding: 24px 32px;
+      border-bottom: 4px solid var(--amber-500);
+    }
+
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .header h1 {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    .header .opponent-name {
+      color: var(--amber-400);
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .header .subtitle {
+      color: var(--slate-400);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .header-meta {
+      text-align: right;
+    }
+
+    .header-meta .label {
+      color: var(--slate-400);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .header-meta .value {
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: var(--amber-400);
+    }
+
+    /* === CONTENT === */
+    .content {
+      padding: 24px 32px;
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--slate-800);
+      border-bottom: 2px solid var(--slate-200);
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+    }
+
+    .section-num {
+      color: var(--slate-400);
+    }
+
+    /* === TABLES === */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 8px;
+      border: 1px solid var(--slate-200);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .table-wrap::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+
+    .table-wrap::-webkit-scrollbar-track {
+      background: var(--slate-50);
+      border-radius: 4px;
+    }
+
+    .table-wrap::-webkit-scrollbar-thumb {
+      background: var(--slate-300);
+      border-radius: 4px;
+    }
+
+    .table-wrap::-webkit-scrollbar-thumb:hover {
+      background: var(--slate-400);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    thead th {
+      background: var(--slate-800);
+      color: white;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 0.3px;
+      padding: 10px 12px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    thead th:first-child {
+      text-align: left;
+      position: sticky;
+      left: 0;
+      z-index: 10;
+      background: var(--slate-800);
+      box-shadow: inset -2px 0 0 rgba(0, 0, 0, 0.15);
+    }
+
+    tbody td {
+      padding: 8px 12px;
+      text-align: center;
+      border-bottom: 1px solid var(--slate-100);
+    }
+
+    tbody td:first-child {
+      text-align: left;
+      font-weight: 600;
+      position: sticky;
+      left: 0;
+      z-index: 5;
+      background: var(--white);
+      box-shadow: inset -2px 0 0 rgba(0, 0, 0, 0.05);
+    }
+
+    tbody tr {
+      transition: background 0.2s ease;
+    }
+
+    tbody tr:hover td {
+      background: var(--slate-50);
+    }
+
+    tbody tr:hover td:first-child {
+      background: var(--slate-50);
+    }
+
+    tfoot td {
+      padding: 10px 12px;
+      text-align: center;
+      font-weight: 700;
+      background: var(--slate-100);
+      color: var(--slate-700);
+      border-top: 2px solid var(--slate-300);
+    }
+
+    tfoot td:first-child {
+      text-align: right;
+      position: sticky;
+      left: 0;
+      z-index: 5;
+      background: var(--slate-100);
+      box-shadow: inset -2px 0 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .mono {
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+    }
+
+    .text-red {
+      color: var(--red-700);
+    }
+
+    .text-green {
+      color: var(--green-600);
+    }
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    .spray-text {
+      color: var(--slate-600);
+      font-size: 11px;
+      text-align: left !important;
+    }
+
+    /* Row highlighting for extreme threats */
+    .row-extreme {
+      background: var(--red-50);
+    }
+
+    .row-extreme td {
+      background: var(--red-50);
+    }
+
+    .row-extreme td:first-child {
+      background: var(--red-50);
+      color: var(--red-900);
+    }
+
+    .row-extreme:hover td {
+      background: var(--red-100);
+    }
+
+    .row-extreme:hover td:first-child {
+      background: var(--red-100);
+    }
+
+    /* === THREAT BADGES === */
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .badge-extreme {
+      background: #450a0a;
+      color: #fecaca;
+    }
+
+    .badge-high {
+      background: var(--red-100);
+      color: var(--red-800);
+    }
+
+    .badge-med {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .badge-low {
+      background: #e0f2fe;
+      color: #075985;
+    }
+
+    .badge-not-rated {
+      background: var(--slate-100);
+      color: var(--slate-500);
+      border: 1px solid var(--slate-200);
+    }
+
+    /* === INSIGHT CARDS (LLM prose) === */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .insight-card {
+      padding: 20px 24px;
+      border-radius: 10px;
+      border: 1px solid;
+    }
+
+    .insight-card h3 {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .insight-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .insight-card li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .insight-card li .bullet {
+      flex-shrink: 0;
+      font-weight: 800;
+      margin-top: 2px;
+    }
+
+    .insight-card strong {
+      font-weight: 700;
+    }
+
+    .card-blue {
+      background: var(--blue-50);
+      border-color: #bfdbfe;
+      color: var(--blue-900);
+    }
+
+    .card-blue .bullet {
+      color: var(--blue-600);
+    }
+
+    .card-red {
+      background: var(--red-50);
+      border-color: #fecaca;
+      color: var(--red-900);
+    }
+
+    .card-red .bullet {
+      color: var(--red-600);
+    }
+
+    .card-slate {
+      background: var(--slate-50);
+      border-color: var(--slate-200);
+      color: var(--slate-800);
+    }
+
+    .card-slate .bullet {
+      color: var(--slate-600);
+    }
+
+    /* === PITCHING TABLE === */
+    .pit-era-good {
+      color: var(--green-600);
+      font-weight: 700;
+    }
+
+    .pit-era-bad {
+      color: var(--red-600);
+      font-weight: 700;
+    }
+
+    /* === FOOTER === */
+    .footer {
+      background: var(--slate-100);
+      padding: 12px;
+      text-align: center;
+      border-top: 1px solid var(--slate-200);
+      font-size: 10px;
+      color: var(--slate-500);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .spray-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .spray-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .spray-card {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .spray-card h4 {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--slate-800);
+      margin-bottom: 2px;
+    }
+
+    .spray-card p {
+      font-size: 11px;
+      color: var(--slate-500);
+      margin-bottom: 8px;
+    }
+
+    /* === MOBILE RESPONSIVE QUERIES === */
+    @media (max-width: 768px) {
+      body {
+        padding: 0;
+      }
+
+      .report-container {
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+      }
+
+      .header {
+        padding: 16px;
+      }
+
+      .header h1 {
+        font-size: 20px;
+      }
+
+      .header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .header-meta {
+        text-align: left;
+      }
+
+      .content {
+        padding: 16px 12px;
+      }
+
+      .section-title {
+        font-size: 16px;
+      }
+
+      thead th {
+        padding: 8px 10px;
+      }
+
+      tbody td {
+        padding: 6px 10px;
+      }
+
+      tfoot td {
+        padding: 8px 10px;
+      }
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: white;
+      }
+
+      .report-container {
+        box-shadow: none;
+        border: none;
+      }
+
+      .section {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+
+  
+</head>
+
+<body>
+
+  <div class="report-container">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-row">
+        <div>
+          <h1>Advanced Scouting Report</h1>
+          <p style="font-size:15px; color:var(--slate-300); margin-top:4px;">
+            Team: <span class="opponent-name">Texas Sandlot - Green 9U</span>
+            
+             | Westlake, TX
+          </p>
+        </div>
+        <div class="header-meta">
+          
+          <p class="value" style="font-size: 16px; margin-bottom: 4px;">Record: 13-9-1</p>
+          
+          <p class="value">Games Scouted: 25</p>
+          <p class="value" style="color:var(--slate-400);">Total Plate Appearances: 545</p>
+          <p style="color:var(--slate-400); font-size:10px; margin-top:4px;">2026-10-30 20:35</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- SECTION 1: TACTICAL LINEUP -->
+      
+      <div class="section">
+        <h2 class="section-title"><span class="section-num">1.</span> Aggregated Tactical Lineup Profile (25-Game Sample)</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Lineup / Player</th>
+                <th>G</th>
+                <th>AB</th>
+                <th>H</th>
+                <th>1B</th>
+                <th>2B</th>
+                <th>3B</th>
+                <th>HR</th>
+                <th>RBI</th>
+                <th>BB</th>
+                <th>SO</th>
+                <th>AVG</th>
+                <th>OBP</th>
+                <th>SLG</th>
+                <th>OPS</th>
+                <th>L6 AVG</th>
+                <th>L6 OPS</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>1. Aydin R #18</td>
+                <td>26</td>
+                <td>45</td>
+                <td>27</td>
+                <td>21</td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="font-bold text-red">21</td>
+                <td>14</td>
+                <td>4</td>
+                <td class="mono font-bold">0.600</td>
+                <td class="mono font-bold text-green">0.710</td>
+                <td class="mono font-bold text-red">0.733</td>
+                <td class="mono font-bold text-red">1.443</td>
+                <td class="mono text-blue-600">0.615</td>
+                <td class="mono text-blue-600">1.436</td>
+              </tr>
+              
+              <tr>
+                <td>2. Aviraj B #22</td>
+                <td>26</td>
+                <td>42</td>
+                <td>19</td>
+                <td>10</td>
+                <td>3</td>
+                <td>6</td>
+                <td>0</td>
+                <td class="">13</td>
+                <td>18</td>
+                <td>6</td>
+                <td class="mono font-bold">0.452</td>
+                <td class="mono font-bold text-green">0.629</td>
+                <td class="mono font-bold text-red">0.810</td>
+                <td class="mono font-bold text-red">1.439</td>
+                <td class="mono text-blue-600">0.500</td>
+                <td class="mono text-blue-600">1.343</td>
+              </tr>
+              
+              <tr>
+                <td>3. Grayson D #5</td>
+                <td>26</td>
+                <td>42</td>
+                <td>14</td>
+                <td>13</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="">11</td>
+                <td>9</td>
+                <td>8</td>
+                <td class="mono font-bold">0.333</td>
+                <td class="mono font-bold text-green">0.451</td>
+                <td class="mono ">0.357</td>
+                <td class="mono ">0.808</td>
+                <td class="mono text-blue-600">0.273</td>
+                <td class="mono text-blue-600">0.658</td>
+              </tr>
+              
+              <tr>
+                <td>4. Harrison V #3</td>
+                <td>26</td>
+                <td>41</td>
+                <td>17</td>
+                <td>13</td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="">13</td>
+                <td>12</td>
+                <td>6</td>
+                <td class="mono font-bold">0.415</td>
+                <td class="mono font-bold text-green">0.579</td>
+                <td class="mono ">0.512</td>
+                <td class="mono font-bold text-red">1.091</td>
+                <td class="mono text-blue-600">0.300</td>
+                <td class="mono text-blue-600">0.800</td>
+              </tr>
+              
+              <tr>
+                <td>5. Oliver L #4</td>
+                <td>26</td>
+                <td>40</td>
+                <td>11</td>
+                <td>7</td>
+                <td>2</td>
+                <td>2</td>
+                <td>0</td>
+                <td class="">12</td>
+                <td>17</td>
+                <td>12</td>
+                <td class="mono ">0.275</td>
+                <td class="mono font-bold text-green">0.500</td>
+                <td class="mono ">0.425</td>
+                <td class="mono ">0.925</td>
+                <td class="mono text-blue-600">0.111</td>
+                <td class="mono text-blue-600">0.496</td>
+              </tr>
+              
+              <tr>
+                <td>6. Henry H #16</td>
+                <td>26</td>
+                <td>37</td>
+                <td>13</td>
+                <td>9</td>
+                <td>3</td>
+                <td>0</td>
+                <td>1</td>
+                <td class="font-bold text-red">17</td>
+                <td>10</td>
+                <td>13</td>
+                <td class="mono font-bold">0.351</td>
+                <td class="mono font-bold text-green">0.529</td>
+                <td class="mono ">0.514</td>
+                <td class="mono font-bold text-red">1.043</td>
+                <td class="mono text-blue-600">0.667</td>
+                <td class="mono text-blue-600">1.639</td>
+              </tr>
+              
+              <tr>
+                <td>7. Laken G #10</td>
+                <td>26</td>
+                <td>34</td>
+                <td>12</td>
+                <td>7</td>
+                <td>4</td>
+                <td>1</td>
+                <td>0</td>
+                <td class="font-bold text-red">15</td>
+                <td>19</td>
+                <td>11</td>
+                <td class="mono font-bold">0.353</td>
+                <td class="mono font-bold text-green">0.593</td>
+                <td class="mono ">0.529</td>
+                <td class="mono font-bold text-red">1.122</td>
+                <td class="mono text-blue-600">0.500</td>
+                <td class="mono text-blue-600">1.343</td>
+              </tr>
+              
+              <tr>
+                <td>8. Jack B #17</td>
+                <td>24</td>
+                <td>29</td>
+                <td>10</td>
+                <td>8</td>
+                <td>2</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="">9</td>
+                <td>16</td>
+                <td>12</td>
+                <td class="mono font-bold">0.345</td>
+                <td class="mono font-bold text-green">0.587</td>
+                <td class="mono ">0.414</td>
+                <td class="mono font-bold text-red">1.001</td>
+                <td class="mono text-blue-600">0.571</td>
+                <td class="mono text-blue-600">1.285</td>
+              </tr>
+              
+              <tr>
+                <td>9. Leo G #23</td>
+                <td>26</td>
+                <td>28</td>
+                <td>10</td>
+                <td>7</td>
+                <td>3</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="">8</td>
+                <td>22</td>
+                <td>5</td>
+                <td class="mono font-bold">0.357</td>
+                <td class="mono font-bold text-green">0.673</td>
+                <td class="mono ">0.464</td>
+                <td class="mono font-bold text-red">1.137</td>
+                <td class="mono text-blue-600">0.429</td>
+                <td class="mono text-blue-600">1.428</td>
+              </tr>
+              
+              <tr>
+                <td>10. Andrew T #27</td>
+                <td>26</td>
+                <td>24</td>
+                <td>7</td>
+                <td>7</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="">9</td>
+                <td>24</td>
+                <td>9</td>
+                <td class="mono ">0.292</td>
+                <td class="mono font-bold text-green">0.653</td>
+                <td class="mono ">0.292</td>
+                <td class="mono ">0.945</td>
+                <td class="mono text-blue-600">0.143</td>
+                <td class="mono text-blue-600">0.598</td>
+              </tr>
+              
+              <tr>
+                <td>11. Austin T #1</td>
+                <td>14</td>
+                <td>16</td>
+                <td>4</td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="">6</td>
+                <td>6</td>
+                <td>2</td>
+                <td class="mono ">0.250</td>
+                <td class="mono font-bold text-green">0.478</td>
+                <td class="mono ">0.250</td>
+                <td class="mono ">0.728</td>
+                <td class="mono text-blue-600">0.375</td>
+                <td class="mono text-blue-600">0.920</td>
+              </tr>
+              
+            </tbody>
+            
+            <tfoot>
+              <tr>
+                <td>TEAM TOTALS:</td>
+                <td>-</td>
+                <td>378</td>
+                <td>144</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>134</td>
+                <td>-</td>
+                <td class="text-red">88</td>
+                <td>-</td>
+                <td>-</td>
+                <td class="mono">0.511</td>
+                <td colspan="3"></td>
+              </tr>
+            </tfoot>
+            
+          </table>
+        </div>
+
+        <!-- Top 8 Batters Spray Charts -->
+        <div class="spray-grid" style="page-break-inside: avoid;">
+          
+          
+          <div class="spray-card">
+            <h4>Aydin R #18</h4>
+            <p>AB: 45</p>
+            
+  <svg viewBox="0 0 100 100"
+    style="width: 100%; height: auto; max-width: 140px; overflow:visible; display: block; margin: 0 auto;">
+    <!-- field background -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 95 50 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+
+    <!-- Left sector -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 21.1 38.3 Z" fill="rgba(220, 38, 38, 0.359)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="22" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-36 22 65)">35%</text>
+
+    <!-- Left-Center sector -->
+    <path d="M 50 95 L 21.1 38.3 A 63.64 63.64 0 0 1 40.0 32.1 Z" fill="rgba(220, 38, 38, 0.179)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="36" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-18 36 52)">17%</text>
+
+    <!-- Center sector -->
+    <path d="M 50 95 L 40.0 32.1 A 63.64 63.64 0 0 1 60.0 32.1 Z" fill="rgba(220, 38, 38, 0.33299999999999996)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="50" y="44" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle">33%</text>
+
+    <!-- Right-Center sector -->
+    <path d="M 50 95 L 60.0 32.1 A 63.64 63.64 0 0 1 78.9 38.3 Z" fill="rgba(220, 38, 38, 0.026000000000000002)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="64" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(18 64 52)">2%</text>
+
+    <!-- Right sector -->
+    <path d="M 50 95 L 78.9 38.3 A 63.64 63.64 0 0 1 95 50 Z" fill="rgba(220, 38, 38, 0.10300000000000001)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="78" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(36 78 65)">10%</text>
+
+    <!-- infield dirt outline -->
+    <path d="M 50 95 L 30 75 L 50 55 L 70 75 Z" fill="none" stroke="#94a3b8" stroke-width="0.75" />
+  </svg>
+  
+            <p style="margin-top: 8px; font-weight: 700; color: var(--slate-700); font-size: 10px;">GB: 58.5% | LD: 12.2% | FB: 29.3%</p>
+          </div>
+          
+          
+          
+          <div class="spray-card">
+            <h4>Aviraj B #22</h4>
+            <p>AB: 42</p>
+            
+  <svg viewBox="0 0 100 100"
+    style="width: 100%; height: auto; max-width: 140px; overflow:visible; display: block; margin: 0 auto;">
+    <!-- field background -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 95 50 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+
+    <!-- Left sector -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 21.1 38.3 Z" fill="rgba(220, 38, 38, 0.353)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="22" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-36 22 65)">35%</text>
+
+    <!-- Left-Center sector -->
+    <path d="M 50 95 L 21.1 38.3 A 63.64 63.64 0 0 1 40.0 32.1 Z" fill="rgba(220, 38, 38, 0.11800000000000001)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="36" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-18 36 52)">11%</text>
+
+    <!-- Center sector -->
+    <path d="M 50 95 L 40.0 32.1 A 63.64 63.64 0 0 1 60.0 32.1 Z" fill="rgba(220, 38, 38, 0.265)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="50" y="44" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle">26%</text>
+
+    <!-- Right-Center sector -->
+    <path d="M 50 95 L 60.0 32.1 A 63.64 63.64 0 0 1 78.9 38.3 Z" fill="rgba(220, 38, 38, 0.08800000000000001)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="64" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(18 64 52)">8%</text>
+
+    <!-- Right sector -->
+    <path d="M 50 95 L 78.9 38.3 A 63.64 63.64 0 0 1 95 50 Z" fill="rgba(220, 38, 38, 0.17600000000000002)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="78" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(36 78 65)">17%</text>
+
+    <!-- infield dirt outline -->
+    <path d="M 50 95 L 30 75 L 50 55 L 70 75 Z" fill="none" stroke="#94a3b8" stroke-width="0.75" />
+  </svg>
+  
+            <p style="margin-top: 8px; font-weight: 700; color: var(--slate-700); font-size: 10px;">GB: 55.6% | LD: 16.7% | FB: 27.8%</p>
+          </div>
+          
+          
+          
+          <div class="spray-card">
+            <h4>Grayson D #5</h4>
+            <p>AB: 42</p>
+            
+  <svg viewBox="0 0 100 100"
+    style="width: 100%; height: auto; max-width: 140px; overflow:visible; display: block; margin: 0 auto;">
+    <!-- field background -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 95 50 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+
+    <!-- Left sector -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 21.1 38.3 Z" fill="rgba(220, 38, 38, 0.214)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="22" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-36 22 65)">21%</text>
+
+    <!-- Left-Center sector -->
+    <path d="M 50 95 L 21.1 38.3 A 63.64 63.64 0 0 1 40.0 32.1 Z" fill="rgba(220, 38, 38, 0.14300000000000002)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="36" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-18 36 52)">14%</text>
+
+    <!-- Center sector -->
+    <path d="M 50 95 L 40.0 32.1 A 63.64 63.64 0 0 1 60.0 32.1 Z" fill="rgba(220, 38, 38, 0.39299999999999996)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="50" y="44" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle">39%</text>
+
+    <!-- Right-Center sector -->
+    <path d="M 50 95 L 60.0 32.1 A 63.64 63.64 0 0 1 78.9 38.3 Z" fill="rgba(220, 38, 38, 0.071)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="64" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(18 64 52)">7%</text>
+
+    <!-- Right sector -->
+    <path d="M 50 95 L 78.9 38.3 A 63.64 63.64 0 0 1 95 50 Z" fill="rgba(220, 38, 38, 0.179)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="78" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(36 78 65)">17%</text>
+
+    <!-- infield dirt outline -->
+    <path d="M 50 95 L 30 75 L 50 55 L 70 75 Z" fill="none" stroke="#94a3b8" stroke-width="0.75" />
+  </svg>
+  
+            <p style="margin-top: 8px; font-weight: 700; color: var(--slate-700); font-size: 10px;">GB: 58.8% | LD: 14.7% | FB: 26.5%</p>
+          </div>
+          
+          
+          
+          <div class="spray-card">
+            <h4>Harrison V #3</h4>
+            <p>AB: 41</p>
+            
+  <svg viewBox="0 0 100 100"
+    style="width: 100%; height: auto; max-width: 140px; overflow:visible; display: block; margin: 0 auto;">
+    <!-- field background -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 95 50 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+
+    <!-- Left sector -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 21.1 38.3 Z" fill="rgba(220, 38, 38, 0.233)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="22" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-36 22 65)">23%</text>
+
+    <!-- Left-Center sector -->
+    <path d="M 50 95 L 21.1 38.3 A 63.64 63.64 0 0 1 40.0 32.1 Z" fill="rgba(220, 38, 38, 0.067)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="36" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-18 36 52)">6%</text>
+
+    <!-- Center sector -->
+    <path d="M 50 95 L 40.0 32.1 A 63.64 63.64 0 0 1 60.0 32.1 Z" fill="rgba(220, 38, 38, 0.433)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="50" y="44" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle">43%</text>
+
+    <!-- Right-Center sector -->
+    <path d="M 50 95 L 60.0 32.1 A 63.64 63.64 0 0 1 78.9 38.3 Z" fill="rgba(220, 38, 38, 0.067)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="64" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(18 64 52)">6%</text>
+
+    <!-- Right sector -->
+    <path d="M 50 95 L 78.9 38.3 A 63.64 63.64 0 0 1 95 50 Z" fill="rgba(220, 38, 38, 0.2)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="78" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(36 78 65)">20%</text>
+
+    <!-- infield dirt outline -->
+    <path d="M 50 95 L 30 75 L 50 55 L 70 75 Z" fill="none" stroke="#94a3b8" stroke-width="0.75" />
+  </svg>
+  
+            <p style="margin-top: 8px; font-weight: 700; color: var(--slate-700); font-size: 10px;">GB: 54.5% | LD: 9.1% | FB: 36.4%</p>
+          </div>
+          
+          
+          
+          <div class="spray-card">
+            <h4>Oliver L #4</h4>
+            <p>AB: 40</p>
+            
+  <svg viewBox="0 0 100 100"
+    style="width: 100%; height: auto; max-width: 140px; overflow:visible; display: block; margin: 0 auto;">
+    <!-- field background -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 95 50 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+
+    <!-- Left sector -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 21.1 38.3 Z" fill="rgba(220, 38, 38, 0.429)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="22" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-36 22 65)">42%</text>
+
+    <!-- Left-Center sector -->
+    <path d="M 50 95 L 21.1 38.3 A 63.64 63.64 0 0 1 40.0 32.1 Z" fill="rgba(220, 38, 38, 0.071)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="36" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-18 36 52)">7%</text>
+
+    <!-- Center sector -->
+    <path d="M 50 95 L 40.0 32.1 A 63.64 63.64 0 0 1 60.0 32.1 Z" fill="rgba(220, 38, 38, 0.35700000000000004)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="50" y="44" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle">35%</text>
+
+    <!-- Right-Center sector -->
+    <path d="M 50 95 L 60.0 32.1 A 63.64 63.64 0 0 1 78.9 38.3 Z" fill="rgba(220, 38, 38, 0.036000000000000004)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="64" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(18 64 52)">3%</text>
+
+    <!-- Right sector -->
+    <path d="M 50 95 L 78.9 38.3 A 63.64 63.64 0 0 1 95 50 Z" fill="rgba(220, 38, 38, 0.107)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="78" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(36 78 65)">10%</text>
+
+    <!-- infield dirt outline -->
+    <path d="M 50 95 L 30 75 L 50 55 L 70 75 Z" fill="none" stroke="#94a3b8" stroke-width="0.75" />
+  </svg>
+  
+            <p style="margin-top: 8px; font-weight: 700; color: var(--slate-700); font-size: 10px;">GB: 39.3% | LD: 3.6% | FB: 57.1%</p>
+          </div>
+          
+          
+          
+          <div class="spray-card">
+            <h4>Henry H #16</h4>
+            <p>AB: 37</p>
+            
+  <svg viewBox="0 0 100 100"
+    style="width: 100%; height: auto; max-width: 140px; overflow:visible; display: block; margin: 0 auto;">
+    <!-- field background -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 95 50 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+
+    <!-- Left sector -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 21.1 38.3 Z" fill="rgba(220, 38, 38, 0.22699999999999998)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="22" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-36 22 65)">22%</text>
+
+    <!-- Left-Center sector -->
+    <path d="M 50 95 L 21.1 38.3 A 63.64 63.64 0 0 1 40.0 32.1 Z" fill="rgba(220, 38, 38, 0.045)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="36" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-18 36 52)">4%</text>
+
+    <!-- Center sector -->
+    <path d="M 50 95 L 40.0 32.1 A 63.64 63.64 0 0 1 60.0 32.1 Z" fill="rgba(220, 38, 38, 0.273)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="50" y="44" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle">27%</text>
+
+    <!-- Right-Center sector -->
+    <path d="M 50 95 L 60.0 32.1 A 63.64 63.64 0 0 1 78.9 38.3 Z" fill="rgba(220, 38, 38, 0.273)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="64" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(18 64 52)">27%</text>
+
+    <!-- Right sector -->
+    <path d="M 50 95 L 78.9 38.3 A 63.64 63.64 0 0 1 95 50 Z" fill="rgba(220, 38, 38, 0.182)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="78" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(36 78 65)">18%</text>
+
+    <!-- infield dirt outline -->
+    <path d="M 50 95 L 30 75 L 50 55 L 70 75 Z" fill="none" stroke="#94a3b8" stroke-width="0.75" />
+  </svg>
+  
+            <p style="margin-top: 8px; font-weight: 700; color: var(--slate-700); font-size: 10px;">GB: 79.2% | LD: 8.3% | FB: 12.5%</p>
+          </div>
+          
+          
+          
+          <div class="spray-card">
+            <h4>Laken G #10</h4>
+            <p>AB: 34</p>
+            
+  <svg viewBox="0 0 100 100"
+    style="width: 100%; height: auto; max-width: 140px; overflow:visible; display: block; margin: 0 auto;">
+    <!-- field background -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 95 50 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+
+    <!-- Left sector -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 21.1 38.3 Z" fill="rgba(220, 38, 38, 0.136)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="22" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-36 22 65)">13%</text>
+
+    <!-- Left-Center sector -->
+    <path d="M 50 95 L 21.1 38.3 A 63.64 63.64 0 0 1 40.0 32.1 Z" fill="rgba(220, 38, 38, 0.136)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="36" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-18 36 52)">13%</text>
+
+    <!-- Center sector -->
+    <path d="M 50 95 L 40.0 32.1 A 63.64 63.64 0 0 1 60.0 32.1 Z" fill="rgba(220, 38, 38, 0.318)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="50" y="44" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle">31%</text>
+
+    <!-- Right-Center sector -->
+    <path d="M 50 95 L 60.0 32.1 A 63.64 63.64 0 0 1 78.9 38.3 Z" fill="rgba(220, 38, 38, 0.318)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="64" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(18 64 52)">31%</text>
+
+    <!-- Right sector -->
+    <path d="M 50 95 L 78.9 38.3 A 63.64 63.64 0 0 1 95 50 Z" fill="rgba(220, 38, 38, 0.091)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="78" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(36 78 65)">9%</text>
+
+    <!-- infield dirt outline -->
+    <path d="M 50 95 L 30 75 L 50 55 L 70 75 Z" fill="none" stroke="#94a3b8" stroke-width="0.75" />
+  </svg>
+  
+            <p style="margin-top: 8px; font-weight: 700; color: var(--slate-700); font-size: 10px;">GB: 60.9% | LD: 13.0% | FB: 26.1%</p>
+          </div>
+          
+          
+          
+          <div class="spray-card">
+            <h4>Jack B #17</h4>
+            <p>AB: 29</p>
+            
+  <svg viewBox="0 0 100 100"
+    style="width: 100%; height: auto; max-width: 140px; overflow:visible; display: block; margin: 0 auto;">
+    <!-- field background -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 95 50 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+
+    <!-- Left sector -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 21.1 38.3 Z" fill="rgba(220, 38, 38, 0.429)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="22" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-36 22 65)">42%</text>
+
+    <!-- Left-Center sector -->
+    <path d="M 50 95 L 21.1 38.3 A 63.64 63.64 0 0 1 40.0 32.1 Z" fill="rgba(220, 38, 38, 0.14300000000000002)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="36" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-18 36 52)">14%</text>
+
+    <!-- Center sector -->
+    <path d="M 50 95 L 40.0 32.1 A 63.64 63.64 0 0 1 60.0 32.1 Z" fill="rgba(220, 38, 38, 0.28600000000000003)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="50" y="44" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle">28%</text>
+
+    <!-- Right-Center sector -->
+    <path d="M 50 95 L 60.0 32.1 A 63.64 63.64 0 0 1 78.9 38.3 Z" fill="rgba(220, 38, 38, 0.0)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="64" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(18 64 52)">0%</text>
+
+    <!-- Right sector -->
+    <path d="M 50 95 L 78.9 38.3 A 63.64 63.64 0 0 1 95 50 Z" fill="rgba(220, 38, 38, 0.14300000000000002)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="78" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(36 78 65)">14%</text>
+
+    <!-- infield dirt outline -->
+    <path d="M 50 95 L 30 75 L 50 55 L 70 75 Z" fill="none" stroke="#94a3b8" stroke-width="0.75" />
+  </svg>
+  
+            <p style="margin-top: 8px; font-weight: 700; color: var(--slate-700); font-size: 10px;">GB: 64.7% | LD: 5.9% | FB: 29.4%</p>
+          </div>
+          
+          
+          
+          <div class="spray-card">
+            <h4>Leo G #23</h4>
+            <p>AB: 28</p>
+            
+  <svg viewBox="0 0 100 100"
+    style="width: 100%; height: auto; max-width: 140px; overflow:visible; display: block; margin: 0 auto;">
+    <!-- field background -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 95 50 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+
+    <!-- Left sector -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 21.1 38.3 Z" fill="rgba(220, 38, 38, 0.273)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="22" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-36 22 65)">27%</text>
+
+    <!-- Left-Center sector -->
+    <path d="M 50 95 L 21.1 38.3 A 63.64 63.64 0 0 1 40.0 32.1 Z" fill="rgba(220, 38, 38, 0.318)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="36" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-18 36 52)">31%</text>
+
+    <!-- Center sector -->
+    <path d="M 50 95 L 40.0 32.1 A 63.64 63.64 0 0 1 60.0 32.1 Z" fill="rgba(220, 38, 38, 0.22699999999999998)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="50" y="44" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle">22%</text>
+
+    <!-- Right-Center sector -->
+    <path d="M 50 95 L 60.0 32.1 A 63.64 63.64 0 0 1 78.9 38.3 Z" fill="rgba(220, 38, 38, 0.091)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="64" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(18 64 52)">9%</text>
+
+    <!-- Right sector -->
+    <path d="M 50 95 L 78.9 38.3 A 63.64 63.64 0 0 1 95 50 Z" fill="rgba(220, 38, 38, 0.091)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="78" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(36 78 65)">9%</text>
+
+    <!-- infield dirt outline -->
+    <path d="M 50 95 L 30 75 L 50 55 L 70 75 Z" fill="none" stroke="#94a3b8" stroke-width="0.75" />
+  </svg>
+  
+            <p style="margin-top: 8px; font-weight: 700; color: var(--slate-700); font-size: 10px;">GB: 34.8% | LD: 4.3% | FB: 60.9%</p>
+          </div>
+          
+          
+          
+          <div class="spray-card">
+            <h4>Andrew T #27</h4>
+            <p>AB: 24</p>
+            
+  <svg viewBox="0 0 100 100"
+    style="width: 100%; height: auto; max-width: 140px; overflow:visible; display: block; margin: 0 auto;">
+    <!-- field background -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 95 50 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+
+    <!-- Left sector -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 21.1 38.3 Z" fill="rgba(220, 38, 38, 0.083)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="22" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-36 22 65)">8%</text>
+
+    <!-- Left-Center sector -->
+    <path d="M 50 95 L 21.1 38.3 A 63.64 63.64 0 0 1 40.0 32.1 Z" fill="rgba(220, 38, 38, 0.25)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="36" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-18 36 52)">25%</text>
+
+    <!-- Center sector -->
+    <path d="M 50 95 L 40.0 32.1 A 63.64 63.64 0 0 1 60.0 32.1 Z" fill="rgba(220, 38, 38, 0.5)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="50" y="44" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle">50%</text>
+
+    <!-- Right-Center sector -->
+    <path d="M 50 95 L 60.0 32.1 A 63.64 63.64 0 0 1 78.9 38.3 Z" fill="rgba(220, 38, 38, 0.16699999999999998)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="64" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(18 64 52)">16%</text>
+
+    <!-- Right sector -->
+    <path d="M 50 95 L 78.9 38.3 A 63.64 63.64 0 0 1 95 50 Z" fill="rgba(220, 38, 38, 0.0)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="78" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(36 78 65)">0%</text>
+
+    <!-- infield dirt outline -->
+    <path d="M 50 95 L 30 75 L 50 55 L 70 75 Z" fill="none" stroke="#94a3b8" stroke-width="0.75" />
+  </svg>
+  
+            <p style="margin-top: 8px; font-weight: 700; color: var(--slate-700); font-size: 10px;">GB: 86.7% | LD: 0.0% | FB: 13.3%</p>
+          </div>
+          
+          
+          
+          <div class="spray-card">
+            <h4>Austin T #1</h4>
+            <p>AB: 16</p>
+            
+  <svg viewBox="0 0 100 100"
+    style="width: 100%; height: auto; max-width: 140px; overflow:visible; display: block; margin: 0 auto;">
+    <!-- field background -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 95 50 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+
+    <!-- Left sector -->
+    <path d="M 50 95 L 5 50 A 63.64 63.64 0 0 1 21.1 38.3 Z" fill="rgba(220, 38, 38, 0.071)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="22" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-36 22 65)">7%</text>
+
+    <!-- Left-Center sector -->
+    <path d="M 50 95 L 21.1 38.3 A 63.64 63.64 0 0 1 40.0 32.1 Z" fill="rgba(220, 38, 38, 0.35700000000000004)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="36" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(-18 36 52)">35%</text>
+
+    <!-- Center sector -->
+    <path d="M 50 95 L 40.0 32.1 A 63.64 63.64 0 0 1 60.0 32.1 Z" fill="rgba(220, 38, 38, 0.14300000000000002)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="50" y="44" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle">14%</text>
+
+    <!-- Right-Center sector -->
+    <path d="M 50 95 L 60.0 32.1 A 63.64 63.64 0 0 1 78.9 38.3 Z" fill="rgba(220, 38, 38, 0.214)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="64" y="52" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(18 64 52)">21%</text>
+
+    <!-- Right sector -->
+    <path d="M 50 95 L 78.9 38.3 A 63.64 63.64 0 0 1 95 50 Z" fill="rgba(220, 38, 38, 0.214)"
+      stroke="#ffffff" stroke-width="0.5" />
+    <text x="78" y="65" font-size="9" fill="#1e293b" font-weight="800" text-anchor="middle"
+      transform="rotate(36 78 65)">21%</text>
+
+    <!-- infield dirt outline -->
+    <path d="M 50 95 L 30 75 L 50 55 L 70 75 Z" fill="none" stroke="#94a3b8" stroke-width="0.75" />
+  </svg>
+  
+            <p style="margin-top: 8px; font-weight: 700; color: var(--slate-700); font-size: 10px;">GB: 85.7% | LD: 0.0% | FB: 14.3%</p>
+          </div>
+          
+          
+        </div>
+
+      </div>
+      
+
+      <!-- SECTION 2: LLM INSIGHT CARDS -->
+      
+      <div class="section">
+        <div class="card-grid">
+          
+          <div class="insight-card card-blue">
+            <h3>🛡️ Defensive Shift Guide vs. Texas Sandlot - Green 9U</h3>
+            <ul>
+              
+              <li><span class="bullet">•</span>
+                <div><strong>Point 1:</strong> While specific spray chart data (pull/opposite field tendencies) is not available, we can infer tendencies from batted ball profiles. Many of their batters have high ground ball rates and low OutFieldDrive percentages, indicating balls are often put on the ground and not hit with extreme authority to the outfield.</div>
+              </li>
+              
+              <li><span class="bullet">•</span>
+                <div><strong>Point 2:</strong> When <strong>Henry H #16</strong> (79.2% GB, 20.8% OutFieldDrive), <strong>Jack B #17</strong> (64.7% GB, 17.6% OutFieldDrive), <strong>Andrew T #27</strong> (86.7% GB, 0.0% OutFieldDrive), or <strong>Austin T #1</strong> (85.7% GB, 0.0% OutFieldDrive) are at the plate, our infielders should play up, expecting ground balls that will stay in front of them. The outfield can also play shallower against these hitters.</div>
+              </li>
+              
+              <li><span class="bullet">•</span>
+                <div><strong>Point 3:</strong> Be aware of <strong>Oliver L #4</strong> (57.1% FB, 35.7% OutFieldDrive) and <strong>Leo G #23</strong> (60.9% FB, 21.7% OutFieldDrive) who hit a high percentage of fly balls. Our outfielders should position themselves deeper for these batters, particularly for <strong>Oliver L #4</strong> who hits with more OutFieldDrive.</div>
+              </li>
+              
+              <li><span class="bullet">•</span>
+                <div><strong>Point 4:</strong> For the rest of the lineup, which generally shows high ground ball rates (50-60%) and moderate OutFieldDrive (20-30%), a standard defensive alignment with infielders slightly up and outfielders playing at a medium depth should be effective.</div>
+              </li>
+              
+            </ul>
+          </div>
+          
+
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            
+            <div class="insight-card card-red">
+              <h3>⚡ Baserunning Threat Profile</h3>
+              <ul>
+                
+                <li><span class="bullet">→</span>
+                  <div><strong>Point 1:</strong> This team is extremely aggressive and successful on the bases. Every player has a high stolen base attempt rate, and most have a success rate of 90% or higher. Expect them to attempt to steal on nearly every opportunity.</div>
+                </li>
+                
+                <li><span class="bullet">→</span>
+                  <div><strong>Point 2:</strong> Pay particular attention to <strong>Henry H #16</strong>, <strong>Grayson D #5</strong>, <strong>Oliver L #4</strong>, <strong>Jack B #17</strong>, and <strong>Austin T #1</strong>, all of whom are perfect on their stolen base attempts (100% success rate). We must be quick to the plate and accurate with throws.</div>
+                </li>
+                
+                <li><span class="bullet">→</span>
+                  <div><strong>Point 3:</strong> The top of their lineup, including <strong>Aydin R #18</strong> (40 SB Att, 92% Rate), <strong>Aviraj B #22</strong> (31 SB Att, 94% Rate), and <strong>Laken G #10</strong> (31 SB Att, 97% Rate), are significant stolen base threats who will put pressure on our catcher and infielders.</div>
+                </li>
+                
+              </ul>
+            </div>
+            
+
+            
+            <div class="insight-card card-slate">
+              <h3>⚖️ Texas Sandlot - Green 9U Defensive "Vacuums" (What to Avoid)</h3>
+              <ul>
+                
+                <li><span class="bullet">✓</span>
+                  <div><strong>Point 1:</strong> Their infield defense is strong, particularly up the middle. <strong>Laken G #10</strong> at shortstop is a vacuum, recording 17 putouts. Our batters should try to avoid hitting directly to him.</div>
+                </li>
+                
+                <li><span class="bullet">✓</span>
+                  <div><strong>Point 2:</strong> <strong>Grayson D #5</strong> is a versatile and effective defender, with 15 putouts at pitcher and 13 putouts at first base. This indicates strong defensive play around the mound and at first, suggesting their infielders make accurate throws.</div>
+                </li>
+                
+                <li><span class="bullet">✓</span>
+                  <div><strong>Point 3:</strong> We should recognize that their pitchers are also active defenders, with <strong>Grayson D #5</strong> (15 putouts), <strong>Leo G #23</strong> (5 putouts), and <strong>Aydin R #18</strong> (4 putouts) all showing good range or reaction time on comebackers.</div>
+                </li>
+                
+                <li><span class="bullet">✓</span>
+                  <div><strong>Point 4:</strong> Overall, their infield appears to be their defensive strength. Our batters should focus on hitting gaps and avoiding direct contact with <strong>Laken G #10</strong> at SS and <strong>Grayson D #5</strong> at P/1B.</div>
+                </li>
+                
+              </ul>
+            </div>
+            
+
+            
+            <div class="insight-card card-blue"
+              style="background:var(--slate-800); border-color:var(--slate-900); color:white;">
+              <h3 style="color:var(--amber-400);">🎯 Plate Approach vs. Pitchers</h3>
+              <ul>
+                
+                <li><span class="bullet" style="color:var(--amber-500);">✓</span>
+                  <div><strong>Point 1:</strong> Be patient at the plate. Texas Sandlot pitchers generally struggle with control, as evidenced by high walk totals and low strike percentages across the staff. Many pitchers throw strikes less than 50% of the time.</div>
+                </li>
+                
+                <li><span class="bullet" style="color:var(--amber-500);">✓</span>
+                  <div><strong>Point 2:</strong> Target pitchers like <strong>Laken G #10</strong> (40% STK%, 25 BB in 4.1 IP) and <strong>Oliver L #4</strong> (46% STK%, 16 BB in 6.1 IP) who have significant control issues. These pitchers are highly likely to walk batters, so our hitters should be disciplined and wait for their pitch.</div>
+                </li>
+                
+                <li><span class="bullet" style="color:var(--amber-500);">✓</span>
+                  <div><strong>Point 3:</strong> Even their more effective pitchers like <strong>Grayson D #5</strong> (58% STK%, 19 BB in 20.2 IP) and <strong>Aviraj B #22</strong> (54% STK%, 7 BB in 7.0 IP) still issue a high number of walks. While they throw more strikes, our batters should still prioritize getting a good pitch to hit rather than swinging at anything close.</div>
+                </li>
+                
+                <li><span class="bullet" style="color:var(--amber-500);">✓</span>
+                  <div><strong>Point 4:</strong> Our goal should be to make their pitchers work deep into counts, force them to throw strikes, and capitalize on the numerous walk opportunities. Be aggressive on pitches over the heart of the plate.</div>
+                </li>
+                
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- SECTION 3: PITCHING STAFF -->
+      
+      <div class="section">
+        <h2 class="section-title"><span class="section-num">2.</span> Pitching Staff Intelligence</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Pitcher</th>
+                <th>GP</th>
+                <th>GS</th>
+                <th>IP</th>
+                <th>P#</th>
+                <th>BF</th>
+                <th>W</th>
+                <th>L</th>
+                <th>SV</th>
+                <th>BS</th>
+                <th>SV%</th>
+                <th>H</th>
+                <th>ER</th>
+                <th>BB</th>
+                <th>SO</th>
+                <th>K-L</th>
+                <th>HBP</th>
+                <th>WP</th>
+                <th>BAA</th>
+                <th>ERA</th>
+                <th>WHIP</th>
+                <th>K/BB</th>
+                <th>STK%</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>Grayson D #5</td>
+                <td>10</td>
+                <td>8</td>
+                <td>20.2</td>
+                <td>451</td>
+                <td>132</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="mono">0%</td>
+                <td>32</td>
+                <td>28</td>
+                <td>19</td>
+                <td>23</td>
+                <td>12</td>
+                <td>7</td>
+                <td>20</td>
+                <td class="mono">0.242</td>
+                <td class="mono pit-era-bad">8.13</td>
+                <td class="mono">2.47</td>
+                <td>1.2</td>
+                <td>58%</td>
+              </tr>
+              
+              <tr>
+                <td>Aydin R #18</td>
+                <td>8</td>
+                <td>4</td>
+                <td>10.2</td>
+                <td>296</td>
+                <td>75</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="mono">0%</td>
+                <td>15</td>
+                <td>16</td>
+                <td>18</td>
+                <td>16</td>
+                <td>12</td>
+                <td>5</td>
+                <td>12</td>
+                <td class="mono">0.200</td>
+                <td class="mono pit-era-bad">9.00</td>
+                <td class="mono">3.09</td>
+                <td>0.9</td>
+                <td>50%</td>
+              </tr>
+              
+              <tr>
+                <td>Leo G #23</td>
+                <td>8</td>
+                <td>5</td>
+                <td>11.0</td>
+                <td>283</td>
+                <td>72</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="mono">0%</td>
+                <td>15</td>
+                <td>26</td>
+                <td>20</td>
+                <td>19</td>
+                <td>10</td>
+                <td>3</td>
+                <td>18</td>
+                <td class="mono">0.208</td>
+                <td class="mono pit-era-bad">14.18</td>
+                <td class="mono">3.18</td>
+                <td>0.9</td>
+                <td>50%</td>
+              </tr>
+              
+              <tr>
+                <td>Laken G #10</td>
+                <td>7</td>
+                <td>1</td>
+                <td>4.1</td>
+                <td>227</td>
+                <td>50</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="mono">0%</td>
+                <td>6</td>
+                <td>15</td>
+                <td>25</td>
+                <td>10</td>
+                <td>5</td>
+                <td>3</td>
+                <td>15</td>
+                <td class="mono">0.120</td>
+                <td class="mono pit-era-bad">20.77</td>
+                <td class="mono">7.15</td>
+                <td>0.4</td>
+                <td>40%</td>
+              </tr>
+              
+              <tr>
+                <td>Oliver L #4</td>
+                <td>7</td>
+                <td>3</td>
+                <td>6.1</td>
+                <td>195</td>
+                <td>51</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="mono">0%</td>
+                <td>11</td>
+                <td>19</td>
+                <td>16</td>
+                <td>6</td>
+                <td>4</td>
+                <td>1</td>
+                <td>14</td>
+                <td class="mono">0.216</td>
+                <td class="mono pit-era-bad">18.00</td>
+                <td class="mono">4.26</td>
+                <td>0.4</td>
+                <td>46%</td>
+              </tr>
+              
+              <tr>
+                <td>Jack B #17</td>
+                <td>7</td>
+                <td>2</td>
+                <td>7.1</td>
+                <td>217</td>
+                <td>48</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="mono">0%</td>
+                <td>8</td>
+                <td>14</td>
+                <td>16</td>
+                <td>13</td>
+                <td>8</td>
+                <td>1</td>
+                <td>17</td>
+                <td class="mono">0.167</td>
+                <td class="mono pit-era-bad">11.45</td>
+                <td class="mono">3.27</td>
+                <td>0.8</td>
+                <td>52%</td>
+              </tr>
+              
+              <tr>
+                <td>Aviraj B #22</td>
+                <td>6</td>
+                <td>2</td>
+                <td>7.0</td>
+                <td>171</td>
+                <td>56</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="mono">0%</td>
+                <td>19</td>
+                <td>13</td>
+                <td>7</td>
+                <td>9</td>
+                <td>6</td>
+                <td>2</td>
+                <td>7</td>
+                <td class="mono">0.339</td>
+                <td class="mono pit-era-bad">11.14</td>
+                <td class="mono">3.71</td>
+                <td>1.3</td>
+                <td>54%</td>
+              </tr>
+              
+              <tr>
+                <td>Harrison V #3</td>
+                <td>5</td>
+                <td>1</td>
+                <td>5.2</td>
+                <td>158</td>
+                <td>38</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="mono">0%</td>
+                <td>6</td>
+                <td>8</td>
+                <td>9</td>
+                <td>9</td>
+                <td>4</td>
+                <td>1</td>
+                <td>16</td>
+                <td class="mono">0.158</td>
+                <td class="mono pit-era-bad">8.47</td>
+                <td class="mono">2.65</td>
+                <td>1.0</td>
+                <td>52%</td>
+              </tr>
+              
+              <tr>
+                <td>Andrew T #27</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0.0</td>
+                <td>17</td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="mono">0%</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+                <td class="mono">0.500</td>
+                <td class="mono pit-era-good">0.00</td>
+                <td class="mono">0.00</td>
+                <td>0.0</td>
+                <td>47%</td>
+              </tr>
+              
+              <tr>
+                <td>Austin T #1</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0.0</td>
+                <td>15</td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="mono">0%</td>
+                <td>1</td>
+                <td>4</td>
+                <td>3</td>
+                <td>0</td>
+                <td>2</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="mono">0.250</td>
+                <td class="mono pit-era-good">0.00</td>
+                <td class="mono">0.00</td>
+                <td>0.0</td>
+                <td>20%</td>
+              </tr>
+              
+              <tr>
+                <td>Henry H #16</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0.1</td>
+                <td>9</td>
+                <td>3</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="mono">0%</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+                <td class="mono">0.000</td>
+                <td class="mono pit-era-good">0.00</td>
+                <td class="mono">0.00</td>
+                <td>0.0</td>
+                <td>56%</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+
+      <!-- SECTION 4: SITUATIONAL THREATS -->
+      
+      <div class="section">
+        <h2 class="section-title"><span class="section-num">3.</span> Situational Threat Intelligence</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>SB Att</th>
+                <th>CS</th>
+                <th>SB%</th>
+                <th>RISP AB</th>
+                <th>RISP H</th>
+                <th>RISP AVG</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>Aydin R</td>
+                <td>40</td>
+                <td>3</td>
+                <td class="text-red font-bold">92%</td>
+                <td>24</td>
+                <td>18</td>
+                <td
+                  class="text-green font-bold">
+                  0.750</td>
+              </tr>
+              
+              <tr>
+                <td>Aviraj B</td>
+                <td>31</td>
+                <td>2</td>
+                <td class="text-red font-bold">94%</td>
+                <td>23</td>
+                <td>14</td>
+                <td
+                  class="text-green font-bold">
+                  0.609</td>
+              </tr>
+              
+              <tr>
+                <td>Laken G</td>
+                <td>31</td>
+                <td>1</td>
+                <td class="text-red font-bold">97%</td>
+                <td>22</td>
+                <td>10</td>
+                <td
+                  class="text-green font-bold">
+                  0.455</td>
+              </tr>
+              
+              <tr>
+                <td>Leo G</td>
+                <td>31</td>
+                <td>2</td>
+                <td class="text-red font-bold">94%</td>
+                <td>17</td>
+                <td>9</td>
+                <td
+                  class="text-green font-bold">
+                  0.529</td>
+              </tr>
+              
+              <tr>
+                <td>Harrison V</td>
+                <td>28</td>
+                <td>3</td>
+                <td class="text-red font-bold">89%</td>
+                <td>21</td>
+                <td>12</td>
+                <td
+                  class="text-green font-bold">
+                  0.571</td>
+              </tr>
+              
+              <tr>
+                <td>Andrew T</td>
+                <td>26</td>
+                <td>1</td>
+                <td class="text-red font-bold">96%</td>
+                <td>17</td>
+                <td>6</td>
+                <td
+                  class="font-bold">
+                  0.353</td>
+              </tr>
+              
+              <tr>
+                <td>Henry H</td>
+                <td>21</td>
+                <td>0</td>
+                <td class="text-red font-bold">100%</td>
+                <td>25</td>
+                <td>11</td>
+                <td
+                  class="text-green font-bold">
+                  0.440</td>
+              </tr>
+              
+              <tr>
+                <td>Grayson D</td>
+                <td>19</td>
+                <td>0</td>
+                <td class="text-red font-bold">100%</td>
+                <td>23</td>
+                <td>13</td>
+                <td
+                  class="text-green font-bold">
+                  0.565</td>
+              </tr>
+              
+              <tr>
+                <td>Oliver L</td>
+                <td>22</td>
+                <td>0</td>
+                <td class="text-red font-bold">100%</td>
+                <td>16</td>
+                <td>8</td>
+                <td
+                  class="text-green font-bold">
+                  0.500</td>
+              </tr>
+              
+              <tr>
+                <td>Jack B</td>
+                <td>22</td>
+                <td>0</td>
+                <td class="text-red font-bold">100%</td>
+                <td>13</td>
+                <td>7</td>
+                <td
+                  class="text-green font-bold">
+                  0.538</td>
+              </tr>
+              
+              <tr>
+                <td>Austin T</td>
+                <td>9</td>
+                <td>0</td>
+                <td class="text-red font-bold">100%</td>
+                <td>13</td>
+                <td>3</td>
+                <td
+                  class="">
+                  0.231</td>
+              </tr>
+              
+              <tr>
+                <td>Leon L</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="">0%</td>
+                <td>2</td>
+                <td>1</td>
+                <td
+                  class="text-green font-bold">
+                  0.500</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+
+      <!-- SECTION 5: FIELDING INTELLIGENCE -->
+      
+      <div class="section">
+        <h2 class="section-title"><span class="section-num">4.</span> Fielding & Defensive Metrics</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Fielder</th>
+                <th>Primary POS</th>
+                <th>Secondary POS</th>
+                <th>TC</th>
+                <th>PO</th>
+                <th>A</th>
+                <th>E</th>
+                <th>FPCT</th>
+                <th>DP</th>
+                <th>TP</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>Grayson D</td>
+                <td class="text-xs text-gray-500">first baseman</td>
+                <td class="text-xs text-gray-500">pitcher</td>
+                <td>31</td>
+                <td>29</td>
+                <td>1</td>
+                <td class="text-red">1</td>
+                <td class="mono">0.968</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              
+              <tr>
+                <td>Leo G</td>
+                <td class="text-xs text-gray-500">pitcher</td>
+                <td class="text-xs text-gray-500">center fielder</td>
+                <td>21</td>
+                <td>15</td>
+                <td>3</td>
+                <td class="text-red">3</td>
+                <td class="mono">0.857</td>
+                <td>1</td>
+                <td>0</td>
+              </tr>
+              
+              <tr>
+                <td>Aviraj B</td>
+                <td class="text-xs text-gray-500">third baseman</td>
+                <td class="text-xs text-gray-500">pitcher</td>
+                <td>18</td>
+                <td>13</td>
+                <td>3</td>
+                <td class="text-red">2</td>
+                <td class="mono">0.889</td>
+                <td>1</td>
+                <td>0</td>
+              </tr>
+              
+              <tr>
+                <td>Aydin R</td>
+                <td class="text-xs text-gray-500">second baseman</td>
+                <td class="text-xs text-gray-500">shortstop</td>
+                <td>18</td>
+                <td>17</td>
+                <td>0</td>
+                <td class="text-red">1</td>
+                <td class="mono">0.944</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              
+              <tr>
+                <td>Laken G</td>
+                <td class="text-xs text-gray-500">shortstop</td>
+                <td class="text-xs text-gray-500">N/A</td>
+                <td>16</td>
+                <td>16</td>
+                <td>0</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>1</td>
+                <td>0</td>
+              </tr>
+              
+              <tr>
+                <td>Harrison V</td>
+                <td class="text-xs text-gray-500">first baseman</td>
+                <td class="text-xs text-gray-500">pitcher</td>
+                <td>13</td>
+                <td>8</td>
+                <td>2</td>
+                <td class="text-red">3</td>
+                <td class="mono">0.769</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              
+              <tr>
+                <td>Oliver L</td>
+                <td class="text-xs text-gray-500">pitcher</td>
+                <td class="text-xs text-gray-500">left fielder</td>
+                <td>10</td>
+                <td>4</td>
+                <td>3</td>
+                <td class="text-red">3</td>
+                <td class="mono">0.700</td>
+                <td>1</td>
+                <td>0</td>
+              </tr>
+              
+              <tr>
+                <td>Jack B</td>
+                <td class="text-xs text-gray-500">left fielder</td>
+                <td class="text-xs text-gray-500">shortstop</td>
+                <td>8</td>
+                <td>8</td>
+                <td>0</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              
+              <tr>
+                <td>Andrew T</td>
+                <td class="text-xs text-gray-500">second baseman</td>
+                <td class="text-xs text-gray-500">left fielder</td>
+                <td>5</td>
+                <td>5</td>
+                <td>0</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              
+              <tr>
+                <td>Austin T</td>
+                <td class="text-xs text-gray-500">catcher</td>
+                <td class="text-xs text-gray-500">shortstop</td>
+                <td>2</td>
+                <td>2</td>
+                <td>0</td>
+                <td class="">0</td>
+                <td class="mono">1.000</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              
+              <tr>
+                <td>Henry H</td>
+                <td class="text-xs text-gray-500">right fielder</td>
+                <td class="text-xs text-gray-500">N/A</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="text-red">1</td>
+                <td class="mono">N/A</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Confidential Scouting Data • TechVue Solutions, LLC • Auto-Generated 2026-10-30 20:35
+  </div>
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.table-wrap table').forEach((table) => {
+      table.querySelectorAll('th').forEach((th, colIndex) => {
+        th.style.cursor = 'pointer';
+        th.title = 'Click to sort';
+        th.addEventListener('click', () => {
+          const tbody = table.querySelector('tbody');
+          const rows = Array.from(tbody.querySelectorAll('tr'));
+          const isAscending = th.classList.contains('asc');
+          table.querySelectorAll('th').forEach(t => t.classList.remove('asc', 'desc'));
+          th.classList.toggle('desc', isAscending);
+          th.classList.toggle('asc', !isAscending);
+          const order = isAscending ? -1 : 1;
+
+          rows.sort((a, b) => {
+            let aText = a.cells[colIndex].textContent.trim().replace(/%/g, '');
+            let bText = b.cells[colIndex].textContent.trim().replace(/%/g, '');
+            let aVal = isNaN(parseFloat(aText)) ? aText : parseFloat(aText);
+            let bVal = isNaN(parseFloat(bText)) ? bText : parseFloat(bText);
+
+            if (aVal < bVal) return -1 * order;
+            if (aVal > bVal) return 1 * order;
+            return 0;
+          });
+          rows.forEach(row => tbody.appendChild(row));
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
